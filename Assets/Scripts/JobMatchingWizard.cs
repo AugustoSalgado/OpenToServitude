@@ -19,6 +19,10 @@ namespace DefaultNamespace
         public GameObject PauseMenu;
         public GameObject Overlay;
         public GameObject FinalMessage;
+        public GameObject NotificationCircle;
+        public GameObject NotificationSquare;
+        public TransitionOverlay TransitionOverlay;
+        public FadeOutOverlay FadeOutOverlay;
         public GameObject[] JobDescriptions;
         public GameObject[] Resumes;
         public GameObject[] Profiles;
@@ -52,7 +56,7 @@ namespace DefaultNamespace
             {
                 FinalMessageText.text =
                     $"After this test period you've managed to make {_profit} JamCoins by successfully matching {_successfulMatchedJobs} candidates." +
-                    $" Should you be proud of that? I don't know, but thanks for playing!";
+                    $" Should you be proud of that? I don't know, but thanks for playing! You can always try to beat your score by playing again";
                 Overlay.gameObject.SetActive(true);
                 FinalMessage.gameObject.SetActive(true);
                 return;
@@ -73,7 +77,12 @@ namespace DefaultNamespace
                 _successfulMatchedJobs++;
                 NotificationText.text = "Congratulations! Your last applicant was accepted for the position";
             }
+            
+            TransitionOverlay.DoTransition();
+        }
 
+        public void SwitchTabs()
+        {
             JobDescriptions[_currentJobId-1].SetActive(false);
             Profiles[_currentJobId-1].SetActive(false);
             HomePosts[_currentJobId-1].SetActive(false);
@@ -92,11 +101,14 @@ namespace DefaultNamespace
             HomeTabButton.transform.SetSiblingIndex(jobsTabButtonOrder);
             JobsTabButton.transform.SetSiblingIndex(homeTabButtonOrder);
             PickCandidateButton.SetActive(false);
+            NotificationCircle.SetActive(true);
+            NotificationSquare.SetActive(true);
         }
 
         public void OnExit()
         {
-            Application.Quit();
+            FadeOutOverlay.gameObject.SetActive(true);
+            FadeOutOverlay.ExitGame();
         }
 
         public void TryAgain()

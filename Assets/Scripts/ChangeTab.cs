@@ -11,6 +11,9 @@ namespace DefaultNamespace
 
         public void PerformChangeTab()
         {
+            if (TargetTab.activeSelf)
+                return;
+            
             TargetTab.SetActive(true);
             OtherTab.SetActive(false);
             

@@ -1,5 +1,16 @@
 Font:
 LT Internet from LyonsTipe: https://www.dafont.com/es/lt-internet.font
+
+
 Music:
-Stylish Tech Corporate | Corporation from Alex-Productions: https://www.free-stock-music.com/alex-productions-stylish-tech-corporate-corporation.html
+Opening Logo:
+"Piano Logo" by Peter Nesterouk from Pixabay:
+https://pixabay.com/es/sound-effects/piano-logo-152947/
+
+Background OST:
+"Stylish Tech Corporate | Corporation" from Alex-Productions: https://www.free-stock-music.com/alex-productions-stylish-tech-corporate-corporation.html
+
+Select candidate SFX:
+"button-pressed" by Pixabay:
+https://pixabay.com/es/sound-effects/button-pressed-38129/
 
